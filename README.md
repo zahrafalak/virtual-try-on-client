@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Virtual Try-On for Google Shopping
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A front-end prototype built in a weekend at a **BrainStation × Google hackathon** (April 2024).
 
-## Available Scripts
+## The challenge
 
-In the project directory, you can run:
+Google asked teams to solve a real problem with one of its products, and named **data privacy and security** as a key concern. Projects were presented to and evaluated by Google representatives.
 
-### `npm start`
+Our team of developers, UX designers and data scientists chose **Google Shopping's virtual try-on**: helping shoppers see how a dress would look on a body like theirs.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## The idea: privacy by design
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- The shopper takes a photo and enters their measurements.
+- The feature builds a **silhouette** from the photo and measurements, then **discards the photo**. It stays on the shopper's phone and never reaches Google's servers.
+- The silhouette is matched to the **closest model in Google's existing lineup**, so the shopper sees the dress on a similar body shape and size.
 
-### `npm test`
+While working on the matching, we noticed the model lineup lacked diversity in height, size and ethnicity. We recommended Google broaden it, which would also make the matches more accurate.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## What's in this repo
 
-### `npm run build`
+A clickable React prototype of the shopper's flow, built from our designers' Figma mockups:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. A short tutorial
+2. **Taking a photo**, with an animated "silhouette in creation" preview
+3. Entering height and measurements
+4. Seeing the dress on the matched model, with the option to proceed to purchase
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The silhouette building and model matching were the concept we presented; they aren't implemented here. The chosen photo isn't uploaded or stored anywhere.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Built with:** React, React Router, SCSS, Material UI, Create React App.
 
-### `npm run eject`
+## My part
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I proposed the silhouette approach, which the team adopted. I built the photo flow in React and SCSS:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [#1 Photo upload component](https://github.com/mayteles/virtual-try-on-client/pull/1): the photo step with the animated silhouette preview
+- [#7 Photo upload](https://github.com/mayteles/virtual-try-on-client/pull/7): the upload page, camera icon and routing
+- [#8 Primary call-to-action styling](https://github.com/mayteles/virtual-try-on-client/pull/8)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Team developers:** [@mayteles](https://github.com/mayteles), [@BeccaVin](https://github.com/BeccaVin), [@laur-af](https://github.com/laur-af) and me, working with our UX designers and data scientists.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This is my fork of the team repository, [mayteles/virtual-try-on-client](https://github.com/mayteles/virtual-try-on-client).
 
-## Learn More
+## Running it locally
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm install
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Then open http://localhost:3000.
